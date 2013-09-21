@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65A67E5D17ED6605002E9C44 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A67E5C17ED6605002E9C44 /* Cocoa.framework */; };
+		65A67E6717ED6605002E9C44 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65A67E6517ED6605002E9C44 /* InfoPlist.strings */; };
+		65A67E6A17ED6605002E9C44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A67E6917ED6605002E9C44 /* main.m */; };
+		65A67E6D17ED6605002E9C44 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 65A67E6B17ED6605002E9C44 /* Credits.rtf */; };
+		65A67E7017ED6605002E9C44 /* CodeTreeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A67E6F17ED6605002E9C44 /* CodeTreeAppDelegate.m */; };
+		65A67E7317ED6605002E9C44 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65A67E7117ED6605002E9C44 /* MainMenu.xib */; };
+		65A67E7617ED6605002E9C44 /* CodeTree.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65A67E7417ED6605002E9C44 /* CodeTree.xcdatamodeld */; };
+		65A67E8D17ED718F002E9C44 /* TheView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A67E8C17ED718E002E9C44 /* TheView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		65A67E5817ED6605002E9C44 /* CodeTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A67E5C17ED6605002E9C44 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		65A67E5F17ED6605002E9C44 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		65A67E6017ED6605002E9C44 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		65A67E6117ED6605002E9C44 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		65A67E6417ED6605002E9C44 /* CodeTree-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CodeTree-Info.plist"; sourceTree = "<group>"; };
+		65A67E6617ED6605002E9C44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		65A67E6817ED6605002E9C44 /* CodeTree-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodeTree-Prefix.pch"; sourceTree = "<group>"; };
+		65A67E6917ED6605002E9C44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65A67E6C17ED6605002E9C44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		65A67E6E17ED6605002E9C44 /* CodeTreeAppDelegate.h */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = CodeTreeAppDelegate.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; wrapsLines = 0; };
+		65A67E6F17ED6605002E9C44 /* CodeTreeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeTreeAppDelegate.m; sourceTree = "<group>"; };
+		65A67E7217ED6605002E9C44 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		65A67E7517ED6605002E9C44 /* CodeTree.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CodeTree.xcdatamodel; sourceTree = "<group>"; };
+		65A67E8B17ED718E002E9C44 /* TheView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheView.h; sourceTree = "<group>"; };
+		65A67E8C17ED718E002E9C44 /* TheView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65A67E5517ED6605002E9C44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A67E5D17ED6605002E9C44 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65A67E4D17ED6605002E9C44 = {
+			isa = PBXGroup;
+			children = (
+				65A67E6217ED6605002E9C44 /* CodeTree */,
+				65A67E5B17ED6605002E9C44 /* Frameworks */,
+				65A67E5917ED6605002E9C44 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65A67E5917ED6605002E9C44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65A67E5817ED6605002E9C44 /* CodeTree.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65A67E5B17ED6605002E9C44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65A67E5C17ED6605002E9C44 /* Cocoa.framework */,
+				65A67E5E17ED6605002E9C44 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65A67E5E17ED6605002E9C44 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65A67E5F17ED6605002E9C44 /* AppKit.framework */,
+				65A67E6017ED6605002E9C44 /* CoreData.framework */,
+				65A67E6117ED6605002E9C44 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		65A67E6217ED6605002E9C44 /* CodeTree */ = {
+			isa = PBXGroup;
+			children = (
+				65A67E6E17ED6605002E9C44 /* CodeTreeAppDelegate.h */,
+				65A67E6F17ED6605002E9C44 /* CodeTreeAppDelegate.m */,
+				65A67E7117ED6605002E9C44 /* MainMenu.xib */,
+				65A67E7417ED6605002E9C44 /* CodeTree.xcdatamodeld */,
+				65A67E6317ED6605002E9C44 /* Supporting Files */,
+				65A67E8B17ED718E002E9C44 /* TheView.h */,
+				65A67E8C17ED718E002E9C44 /* TheView.m */,
+			);
+			path = CodeTree;
+			sourceTree = "<group>";
+		};
+		65A67E6317ED6605002E9C44 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65A67E6417ED6605002E9C44 /* CodeTree-Info.plist */,
+				65A67E6517ED6605002E9C44 /* InfoPlist.strings */,
+				65A67E6817ED6605002E9C44 /* CodeTree-Prefix.pch */,
+				65A67E6917ED6605002E9C44 /* main.m */,
+				65A67E6B17ED6605002E9C44 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65A67E5717ED6605002E9C44 /* CodeTree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65A67E7917ED6605002E9C44 /* Build configuration list for PBXNativeTarget "CodeTree" */;
+			buildPhases = (
+				65A67E5417ED6605002E9C44 /* Sources */,
+				65A67E5517ED6605002E9C44 /* Frameworks */,
+				65A67E5617ED6605002E9C44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodeTree;
+			productName = CodeTree;
+			productReference = 65A67E5817ED6605002E9C44 /* CodeTree.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65A67E4F17ED6605002E9C44 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 65A67E5217ED6605002E9C44 /* Build configuration list for PBXProject "CodeTree" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 65A67E4D17ED6605002E9C44;
+			productRefGroup = 65A67E5917ED6605002E9C44 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65A67E5717ED6605002E9C44 /* CodeTree */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65A67E5617ED6605002E9C44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A67E6717ED6605002E9C44 /* InfoPlist.strings in Resources */,
+				65A67E6D17ED6605002E9C44 /* Credits.rtf in Resources */,
+				65A67E7317ED6605002E9C44 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65A67E5417ED6605002E9C44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A67E6A17ED6605002E9C44 /* main.m in Sources */,
+				65A67E7017ED6605002E9C44 /* CodeTreeAppDelegate.m in Sources */,
+				65A67E7617ED6605002E9C44 /* CodeTree.xcdatamodeld in Sources */,
+				65A67E8D17ED718F002E9C44 /* TheView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		65A67E6517ED6605002E9C44 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65A67E6617ED6605002E9C44 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		65A67E6B17ED6605002E9C44 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65A67E6C17ED6605002E9C44 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		65A67E7117ED6605002E9C44 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65A67E7217ED6605002E9C44 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65A67E7717ED6605002E9C44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		65A67E7817ED6605002E9C44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		65A67E7A17ED6605002E9C44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CodeTree/CodeTree-Prefix.pch";
+				INFOPLIST_FILE = "CodeTree/CodeTree-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		65A67E7B17ED6605002E9C44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CodeTree/CodeTree-Prefix.pch";
+				INFOPLIST_FILE = "CodeTree/CodeTree-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65A67E5217ED6605002E9C44 /* Build configuration list for PBXProject "CodeTree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65A67E7717ED6605002E9C44 /* Debug */,
+				65A67E7817ED6605002E9C44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65A67E7917ED6605002E9C44 /* Build configuration list for PBXNativeTarget "CodeTree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65A67E7A17ED6605002E9C44 /* Debug */,
+				65A67E7B17ED6605002E9C44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		65A67E7417ED6605002E9C44 /* CodeTree.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				65A67E7517ED6605002E9C44 /* CodeTree.xcdatamodel */,
+			);
+			currentVersion = 65A67E7517ED6605002E9C44 /* CodeTree.xcdatamodel */;
+			path = CodeTree.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 65A67E4F17ED6605002E9C44 /* Project object */;
+}
