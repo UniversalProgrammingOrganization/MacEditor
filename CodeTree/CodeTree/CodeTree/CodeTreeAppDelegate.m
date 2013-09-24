@@ -12,7 +12,6 @@
 @synthesize theView = _theView;
 @synthesize theLevelIndicator = _theLevelIndicator;
 @synthesize theText = _theText;
-
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification

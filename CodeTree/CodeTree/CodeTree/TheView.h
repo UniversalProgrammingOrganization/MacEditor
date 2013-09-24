@@ -12,7 +12,7 @@
 
 @interface TheView : NSView 
 {
-	//@private CodeTreeAppDelegate* appDelegate;
+	@private CodeTreeAppDelegate* appDelegate;
 }
 
 @end

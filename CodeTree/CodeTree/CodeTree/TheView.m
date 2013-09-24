@@ -35,11 +35,29 @@
     // Drawing code here.
 }
 
+-(void)awakeFromNib
+{
+	appDelegate = NSApplication.sharedApplication.delegate;
+}
+
+// render the indentation:
+-(void)insertIndents
+{
+	[appDelegate.theText setStringValue:
+	 [NSString stringWithFormat:
+		@"%@%@", appDelegate.theText.stringValue, @"\n"]];
+	
+	for (int i = 0; i < [appDelegate.theLevelIndicator intValue]; i++)
+	{
+		[appDelegate.theText setStringValue:
+		 [NSString stringWithFormat:
+			@"%@%@", appDelegate.theText.stringValue, @"\t"]];
+	}
+}
+
 // currently accepting only "{" and "}" as input:
 -(void)keyDown:(NSEvent *)theEvent
 {
-	CodeTreeAppDelegate* appDelegate = NSApplication.sharedApplication.delegate;
-	
 	unsigned short keyCode = [theEvent keyCode];
 	NSUInteger modifierFlags = [theEvent modifierFlags];
 
@@ -47,15 +65,29 @@
 	{
 		if (keyCode == kVK_ANSI_LeftBracket)
 		{
-			[appDelegate.theLevelIndicator setIntValue:[appDelegate.theLevelIndicator intValue] + 1];
+			[self insertIndents];		
 			
-			[appDelegate.theText setStringValue:[NSString stringWithFormat:@"%@%@", appDelegate.theText.stringValue, @"\n{\n\t"]];
+			[appDelegate.theLevelIndicator setIntValue:
+				[appDelegate.theLevelIndicator intValue] + 1];
+			
+			[appDelegate.theText setStringValue:
+				[NSString stringWithFormat:
+					@"%@%@", appDelegate.theText.stringValue, @"{"]];
+			
+			[self insertIndents];		
 		}
 		else if (keyCode == kVK_ANSI_RightBracket)
 		{
-			[appDelegate.theLevelIndicator setIntValue:[appDelegate.theLevelIndicator intValue] - 1];
+			[appDelegate.theLevelIndicator setIntValue:
+			 [appDelegate.theLevelIndicator intValue] - 1];
+
+			[self insertIndents];		
+
+			[appDelegate.theText setStringValue:
+			 [NSString stringWithFormat:
+				@"%@%@", appDelegate.theText.stringValue, @"}"]];
 			
-			[appDelegate.theText setStringValue:[NSString stringWithFormat:@"%@%@", appDelegate.theText.stringValue, @"\n}\n"]];
+			[self insertIndents];		
 		}
 		else
 		{
@@ -64,7 +96,7 @@
 	}
 	else if (keyCode == kVK_Return)
 	{
-		[appDelegate.theText setStringValue:[NSString stringWithFormat:@"%@%@", appDelegate.theText.stringValue, @"\n"]];
+		[self insertIndents];		
 	}
 	else
 	{
@@ -73,14 +105,6 @@
 
 	// calling this superclass method makes annoying sounds; so not doing it:
 	//[super keyDown:theEvent];
-}
-
-// render the indentation:
--(void)insertIndent
-{
-	CodeTreeAppDelegate* d = NSApplication.sharedApplication.delegate;
-
-
 }
 
 -(BOOL)canBecomeKeyView
@@ -95,9 +119,9 @@
 
 - (void)insertText:(id)string
 {
-	CodeTreeAppDelegate* d = NSApplication.sharedApplication.delegate;
-
-  [d.theText setStringValue:[NSString stringWithFormat:@"%@%@", d.theText.stringValue, string]];
+  [appDelegate.theText setStringValue:
+		[NSString stringWithFormat:
+			@"%@%@", appDelegate.theText.stringValue, string]];
 }
 
 @end
