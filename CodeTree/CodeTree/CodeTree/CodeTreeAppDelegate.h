@@ -17,6 +17,7 @@
     NSManagedObjectContext *__managedObjectContext;
 		TheView *_theView;
 	NSLevelIndicator *_theLevelIndicator;
+	NSTextField *_theText;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (assign) IBOutlet TheView *theView;
 @property (assign) IBOutlet NSLevelIndicator* theLevelIndicator;
+@property (assign) IBOutlet NSTextField *theText;
 
 - (IBAction)saveAction:sender;
 

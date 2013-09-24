@@ -8,11 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class CodeTreeAppDelegate;
 
 @interface TheView : NSView 
 {
-@private
-    
+	//@private CodeTreeAppDelegate* appDelegate;
 }
 
 @end

@@ -6,6 +6,7 @@
 //  Copyright 2013 Daniel Randall. All rights reserved.
 //
 
+#import "CodeTreeAppDelegate.h"
 #import "TheView.h"
 #include <Carbon/Carbon.h>
 #import "CodeTreeAppDelegate.h"
@@ -15,8 +16,10 @@
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
+
+		if (self)
+		{
+
     }
     
     return self;
@@ -35,7 +38,7 @@
 // currently accepting only "{" and "}" as input:
 -(void)keyDown:(NSEvent *)theEvent
 {
-	CodeTreeAppDelegate* d = NSApplication.sharedApplication.delegate;
+	CodeTreeAppDelegate* appDelegate = NSApplication.sharedApplication.delegate;
 	
 	unsigned short keyCode = [theEvent keyCode];
 	NSUInteger modifierFlags = [theEvent modifierFlags];
@@ -44,20 +47,40 @@
 	{
 		if (keyCode == kVK_ANSI_LeftBracket)
 		{
-			[d.theLevelIndicator setIntValue:[d.theLevelIndicator intValue] + 1];
+			[appDelegate.theLevelIndicator setIntValue:[appDelegate.theLevelIndicator intValue] + 1];
 			
-			NSLog(@"\n open \n");		
+			[appDelegate.theText setStringValue:[NSString stringWithFormat:@"%@%@", appDelegate.theText.stringValue, @"\n{\n\t"]];
 		}
 		else if (keyCode == kVK_ANSI_RightBracket)
 		{
-			[d.theLevelIndicator setIntValue:[d.theLevelIndicator intValue] - 1];
+			[appDelegate.theLevelIndicator setIntValue:[appDelegate.theLevelIndicator intValue] - 1];
 			
-			NSLog(@"\n close \n");		
+			[appDelegate.theText setStringValue:[NSString stringWithFormat:@"%@%@", appDelegate.theText.stringValue, @"\n}\n"]];
+		}
+		else
+		{
+			[self interpretKeyEvents:[NSArray arrayWithObject:theEvent]];
 		}
 	}
-	
+	else if (keyCode == kVK_Return)
+	{
+		[appDelegate.theText setStringValue:[NSString stringWithFormat:@"%@%@", appDelegate.theText.stringValue, @"\n"]];
+	}
+	else
+	{
+		[self interpretKeyEvents:[NSArray arrayWithObject:theEvent]];
+	}
+
 	// calling this superclass method makes annoying sounds; so not doing it:
 	//[super keyDown:theEvent];
+}
+
+// render the indentation:
+-(void)insertIndent
+{
+	CodeTreeAppDelegate* d = NSApplication.sharedApplication.delegate;
+
+
 }
 
 -(BOOL)canBecomeKeyView
@@ -70,6 +93,11 @@
 	return true;
 }
 
+- (void)insertText:(id)string
+{
+	CodeTreeAppDelegate* d = NSApplication.sharedApplication.delegate;
 
+  [d.theText setStringValue:[NSString stringWithFormat:@"%@%@", d.theText.stringValue, string]];
+}
 
 @end
