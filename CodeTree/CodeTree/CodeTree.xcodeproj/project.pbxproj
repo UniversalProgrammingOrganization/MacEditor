@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		655CEFF1182C4BD700F88354 /* CircularQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 655CEFEF182C4BD700F88354 /* CircularQueue.cpp */; };
 		657B5E3F182B60B100E1AF3D /* Queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657B5E3D182B60B100E1AF3D /* Queue.cpp */; };
 		65A67E5D17ED6605002E9C44 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A67E5C17ED6605002E9C44 /* Cocoa.framework */; };
 		65A67E6717ED6605002E9C44 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65A67E6517ED6605002E9C44 /* InfoPlist.strings */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		655CEFEF182C4BD700F88354 /* CircularQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircularQueue.cpp; sourceTree = "<group>"; };
+		655CEFF0182C4BD700F88354 /* CircularQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularQueue.h; sourceTree = "<group>"; };
 		657B5E3D182B60B100E1AF3D /* Queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Queue.cpp; sourceTree = "<group>"; };
 		657B5E3E182B60B100E1AF3D /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
 		657B5E40182B61D400E1AF3D /* library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = library.h; sourceTree = "<group>"; };
@@ -58,6 +61,8 @@
 				657B5E40182B61D400E1AF3D /* library.h */,
 				657B5E3E182B60B100E1AF3D /* Queue.h */,
 				657B5E3D182B60B100E1AF3D /* Queue.cpp */,
+				655CEFF0182C4BD700F88354 /* CircularQueue.h */,
+				655CEFEF182C4BD700F88354 /* CircularQueue.cpp */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				65A67E7017ED6605002E9C44 /* CodeTreeAppDelegate.m in Sources */,
 				65A67E7617ED6605002E9C44 /* CodeTree.xcdatamodeld in Sources */,
 				657B5E3F182B60B100E1AF3D /* Queue.cpp in Sources */,
+				655CEFF1182C4BD700F88354 /* CircularQueue.cpp in Sources */,
 				65A67E8D17ED718F002E9C44 /* TheView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

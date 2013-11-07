@@ -16,36 +16,37 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// A simple queue class.
-// Uses in this program: parsing, tree traversal, recursion.
+// A circular queue class, restricted to sizes that are a power of 2.
+// Uses in this program: real-time parsing, high-performance buffering.
 
-#ifndef __CodeTree__Queue__
-#define __CodeTree__Queue__
+#ifndef __CodeTree__CircularQueue__
+#define __CodeTree__CircularQueue__
 
 #include "library.h"
 
-class QueueElement // represents a queue Element
+class CircularQueue
 {
 	public:
-		OBJECT* m_pObject; // pointer to an Object
-		QueueElement* m_pNext; // pointer to the Next element
+		uint32_t m_nEnqueues;  // total number of enqueue operations
+		uint32_t m_nDequeues;  // total number of dequeue operations
+		uint32_t m_nIndexMask; // Index Mask - a bitmask
+		OBJECT** m_ppObjects;  // pointer to array of object pointers
 
-		QueueElement(OBJECT* pObject); // Element constructor
+		CircularQueue();
+
+		~CircularQueue();
+
+		void Reset();
+
+		bool Init(uint32_t dwSize);
+
+		OBJECT* Enqueue(OBJECT* pObject);
+
+		OBJECT* Dequeue();
+
+		OBJECT* Peek();
+
+		uint32_t Size();
 };
 
-class Queue // represents a Queue
-{
-	public:
-		QueueElement* m_pFront; // pointer to the Front element
-		QueueElement* m_pBack; // pointer to the Back element
-
-		Queue(); // Queue constructor
-
-		~Queue(); // Queue destructor
-
-		QueueElement* Enqueue(OBJECT* pObject); // Enqueue function
-
-		OBJECT* Dequeue(); // Dequeue function
-};
-
-#endif /* defined(__CodeTree__Queue__) */
+#endif /* defined(__CodeTree__CircularQueue__) */
