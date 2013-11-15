@@ -16,76 +16,34 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "List.h"
 #include "Stack.h"
 
-StackElement::StackElement(OBJECT* pObject) // Element constructor
+ListElement* Stack::getTop()
 {
-	m_pObject = pObject;
-	m_pNext = NULL;
+	return m_List.m_pHead;
 }
 
-Stack::Stack() // Stack constructor
+ListElement* Stack::getBottom()
 {
-	m_pTop = NULL;
-	m_pBottom = NULL;
+	return m_List.m_pTail;
+}
+
+Stack::Stack() : m_List() // Stack constructor
+{
 }
 
 Stack::~Stack() // Stack destructor
 {
-	while (m_pTop) // while the bottom element is not NULL,
-	{
-		Pop(); // Pop elements
-	}
+	m_List.~List();
 }
 
-StackElement* Stack::Push(OBJECT* pObject) // Push function
+ListElement* Stack::Push(OBJECT* pObject) // Push function
 {
-	if (!pObject) // if the object pointer is NULL,
-	{
-		return NULL; // do not Push
-	}
-	
-	StackElement* pElement = new StackElement(pObject); // create a new element
-	
-	if (pElement) // if the element was allocated,
-	{
-		if (m_pTop) // if the top element is not NULL,
-		{
-			pElement->m_pNext = m_pTop; // uptate the next pointer of the new element
-		}
-		
-		m_pTop = pElement; // place the new element at the top of the stack
-		
-		if (!m_pBottom) // if the bottom element is NULL,
-		{
-			m_pBottom = m_pTop; // set the bottom element equal to the top element
-		}
-	}
-	
-	return pElement; // return the new element pointer
+	return m_List.AddHead(pObject);
 }
 
 OBJECT* Stack::Pop() // Pop function
 {
-	StackElement* pElement = m_pTop; // get the element at the bottom of the stack
-	
-	if (pElement) // if the element is not NULL,
-	{
-		m_pTop = m_pTop->m_pNext; // point the bottom element at the next element
-		
-		if (!m_pTop) // if the top element is NULL,
-		{
-			m_pBottom = NULL; // set the bottom element to NULL
-		}
-		
-		OBJECT* pObject = pElement->m_pObject; // get the object pointer from the element
-		
-		delete pElement; // delete the element
-		
-		return pObject; // return the object pointer
-	}
-	else // if the element is NULL,
-	{
-		return NULL; // return NULL, as the stack is empty
-	}
+	return m_List.RemoveHead();
 }

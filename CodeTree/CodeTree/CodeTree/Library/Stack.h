@@ -22,30 +22,25 @@
 #ifndef __CodeTree__Stack__
 #define __CodeTree__Stack__
 
-#include "library.h"
-
-class StackElement // represents a stack Element
-{
-public:
-	OBJECT* m_pObject; // pointer to an Object
-	StackElement* m_pNext; // pointer to the Next element
-	
-	StackElement(OBJECT* pObject); // Element constructor
-};
+#include "List.h"
 
 class Stack // represents a Stack
 {
-public:
-	StackElement* m_pTop; // pointer to the top element
-	StackElement* m_pBottom; // pointer to the Back element
-	
-	Stack(); // Stack constructor
-	
-	~Stack(); // Stack destructor
-	
-	StackElement* Push(OBJECT* pObject); // Push function
-	
-	OBJECT* Pop(); // Pop function
+	private:
+		List m_List;
+
+	public:
+		ListElement* getTop(); // get pointer to the Top element
+
+		ListElement* getBottom();  // get pointer to the Bottom element
+
+		Stack(); // Stack constructor
+		
+		~Stack(); // Stack destructor
+		
+		ListElement* Push(OBJECT* pObject); // Push function
+		
+		OBJECT* Pop(); // Pop function
 };
 
 #endif /* defined(__CodeTree__Stack__) */

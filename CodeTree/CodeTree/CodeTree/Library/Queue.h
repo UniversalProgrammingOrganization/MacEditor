@@ -22,28 +22,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef __CodeTree__Queue__
 #define __CodeTree__Queue__
 
-#include "library.h"
-
-class QueueElement // represents a queue Element
-{
-	public:
-		OBJECT* m_pObject; // pointer to an Object
-		QueueElement* m_pNext; // pointer to the Next element
-
-		QueueElement(OBJECT* pObject); // Element constructor
-};
+#include "List.h"
 
 class Queue // represents a Queue
 {
+	private:
+		List m_List;
+
 	public:
-		QueueElement* m_pFront; // pointer to the Front element
-		QueueElement* m_pBack; // pointer to the Back element
+		ListElement* getFront(); // get pointer to the Front element
+
+		ListElement* getBack();  // get pointer to the Back element
 
 		Queue(); // Queue constructor
 
 		~Queue(); // Queue destructor
 
-		QueueElement* Enqueue(OBJECT* pObject); // Enqueue function
+		ListElement* Enqueue(OBJECT* pObject); // Enqueue function
 
 		OBJECT* Dequeue(); // Dequeue function
 };

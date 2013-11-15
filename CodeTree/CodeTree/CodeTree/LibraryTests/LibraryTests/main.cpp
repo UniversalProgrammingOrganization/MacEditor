@@ -51,8 +51,8 @@ int main(int argc, const char * argv[])
 	
 	std::cout << "\n";
 	
-	std::cout << "Queue front: "<< (const char*)queue.m_pFront->m_pObject << "\n";
-	std::cout << "Queue back: "<< (const char*)queue.m_pBack->m_pObject << "\n";
+	std::cout << "Queue front: "<< (const char*)queue.getFront()->m_pObject << "\n";
+	std::cout << "Queue back: "<< (const char*)queue.getBack()->m_pObject << "\n";
 
 	std::cout << "\n";
 	
@@ -85,8 +85,8 @@ int main(int argc, const char * argv[])
 	
 	std::cout << "\n";
 	
-	std::cout << "Stack top: "<< (const char*)stack.m_pTop->m_pObject << "\n";
-	std::cout << "Stack bottom: "<< (const char*)stack.m_pBottom->m_pObject << "\n";
+	std::cout << "Stack top: "<< (const char*)stack.getTop()->m_pObject << "\n";
+	std::cout << "Stack bottom: "<< (const char*)stack.getBottom()->m_pObject << "\n";
 	
 	std::cout << "\n";
 	
