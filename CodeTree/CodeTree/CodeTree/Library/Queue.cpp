@@ -20,12 +20,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ListElement* Queue::getFront()
 {
-	return m_List.m_pHead;
+	return m_List.getHead();
 }
 
 ListElement* Queue::getBack()
 {
-	return m_List.m_pTail;
+	return m_List.getTail();
 }
 
 Queue::Queue() : m_List() // Queue constructor

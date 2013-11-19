@@ -24,6 +24,16 @@ ListElement::ListElement(OBJECT* pObject) // Element constructor
 	m_pNext = NULL;
 }
 
+ListElement* List::getHead()
+{
+	return m_pHead;
+}
+
+ListElement* List::getTail()
+{
+	return m_pTail;
+}
+
 List::List() // List constructor
 {
 	m_pHead = NULL;

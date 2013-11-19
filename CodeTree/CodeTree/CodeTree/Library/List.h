@@ -26,28 +26,33 @@
 
 class ListElement // represents a List Element
 {
-public:
-	OBJECT* m_pObject; // pointer to an Object
-	ListElement* m_pNext; // pointer to the Next element
-	
-	ListElement(OBJECT* pObject); // Element constructor
+	public:
+		OBJECT* m_pObject; // pointer to an Object
+		ListElement* m_pNext; // pointer to the Next element
+		
+		ListElement(OBJECT* pObject); // Element constructor
 };
 
 class List // represents a List
 {
-public:
-	ListElement* m_pHead; // pointer to the Head element
-	ListElement* m_pTail; // pointer to the Tail element
-	
-	List(); // List constructor
-	
-	~List(); // List destructor
-	
-	ListElement* AddHead(OBJECT* pObject); // AddHead function
-	
-	ListElement* AddTail(OBJECT* pObject); // AddTail function
-	
-	OBJECT* RemoveHead(); // RemoveHead function
+	private:
+		ListElement* m_pHead; // pointer to the Head element
+		ListElement* m_pTail; // pointer to the Tail element
+
+	public:
+		ListElement* getHead(); // get pointer to the Head element
+		
+		ListElement* getTail();  // get pointer to the Tail element
+
+		List(); // List constructor
+		
+		~List(); // List destructor
+		
+		ListElement* AddHead(OBJECT* pObject); // AddHead function
+		
+		ListElement* AddTail(OBJECT* pObject); // AddTail function
+		
+		OBJECT* RemoveHead(); // RemoveHead function
 };
 
 #endif /* defined(__CodeTree__List__) */

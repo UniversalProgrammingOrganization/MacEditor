@@ -21,12 +21,12 @@
 
 ListElement* Stack::getTop()
 {
-	return m_List.m_pHead;
+	return m_List.getHead();
 }
 
 ListElement* Stack::getBottom()
 {
-	return m_List.m_pTail;
+	return m_List.getTail();
 }
 
 Stack::Stack() : m_List() // Stack constructor
