@@ -23,6 +23,31 @@
 #include "../../Library/Queue.h"
 #include "../../Library/Stack.h"
 
+
+int g_tests = 0;
+int g_passd = 0;
+
+#define LE_STRING (const char*)pLE->m_pObject
+
+void report(
+	const char* fnm,
+	const char* got,
+	const char* exp)
+{
+	g_tests++;
+
+	if (got == exp)
+	{
+		g_passd++;
+
+		std::cout << "PASS: "<< (fnm ? fnm : "NULL") << "() == " << (exp ? exp : "NULL") << ")\n";
+	}
+	else
+	{
+		std::cout << "FAIL: "<< (fnm ? fnm : "NULL") << "() == " << (got ? got : "NULL") << ")\n";
+	}
+}
+
 int main(int argc, const char * argv[])
 {
 	std::cout << "Testing Queue:\n\n";
@@ -35,20 +60,27 @@ int main(int argc, const char * argv[])
 	static const char delta[]   = "DELTA";
 	static const char echo[]    = "ECHO";
 	static const char foxtrot[] = "FOXTROT";
-	
-	std::cout << "Enqueue("<< (const char*)alpha << ")\n";
-	queue.Enqueue((OBJECT*)alpha);
-	std::cout << "Enqueue("<< (const char*)bravo << ")\n";
-	queue.Enqueue((OBJECT*)bravo);
-	std::cout << "Enqueue("<< (const char*)charlie << ")\n";
-	queue.Enqueue((OBJECT*)charlie);
-	std::cout << "Enqueue("<< (const char*)delta << ")\n";
-	queue.Enqueue((OBJECT*)delta);
-	std::cout << "Enqueue("<< (const char*)echo << ")\n";
-	queue.Enqueue((OBJECT*)echo);
-	std::cout << "Enqueue("<< (const char*)foxtrot << ")\n";
-	queue.Enqueue((OBJECT*)foxtrot);
-	
+
+	static const char enqueue[] = "Enqueue";
+
+	ListElement* pLE = queue.Enqueue((OBJECT*)alpha);
+	report(enqueue, LE_STRING, alpha);
+
+	pLE = queue.Enqueue((OBJECT*)bravo);
+	report(enqueue, LE_STRING, bravo);
+
+	pLE = queue.Enqueue((OBJECT*)charlie);
+	report(enqueue, LE_STRING, charlie);
+
+	pLE = queue.Enqueue((OBJECT*)delta);
+	report(enqueue, LE_STRING, delta);
+
+	pLE = queue.Enqueue((OBJECT*)echo);
+	report(enqueue, LE_STRING, echo);
+
+	pLE = queue.Enqueue((OBJECT*)foxtrot);
+	report(enqueue, LE_STRING, foxtrot);
+
 	std::cout << "\n";
 	
 	std::cout << "Queue front: "<< (const char*)queue.getFront()->m_pObject << "\n";
@@ -99,6 +131,9 @@ int main(int argc, const char * argv[])
 	
 	std::cout << "\n";
 	
+	std::cout << "Tests:  "<< g_tests << "\n";
+	std::cout << "Passed: "<< g_passd << "\n";
+
 	return 0;
 }
 
