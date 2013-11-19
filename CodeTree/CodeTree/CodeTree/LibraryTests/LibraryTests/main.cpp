@@ -100,6 +100,57 @@ int main(int argc, const char * argv[])
 	
 	static const char getcount[] = "getCount()";
 
+	std::cout << "Testing List:\n\n";
+	
+	static const char addhead[] = "AddHead()";
+	static const char addtail[] = "AddTail()";
+	static const char removehead[] = "RemoveHead()";
+	static const char gethead[] = "getHead()";
+	static const char gettail[] = "getTail()";
+	
+	List list;
+	
+	std::cout << "list should be empty:\n";
+	
+	reportNT(getcount, list.getCount(), 0);
+	report(removehead, list.RemoveHead(), NULL);
+	reportLE(gethead, list.getHead(), NULL);
+	reportLE(gettail, list.getTail(), NULL);
+	
+	std::cout << "add some items:\n";
+	
+	reportLE(addhead, list.AddHead((OBJECT*)alpha),   alpha);
+	reportLE(addhead, list.AddHead((OBJECT*)bravo),   bravo);
+	reportLE(addhead, list.AddHead((OBJECT*)charlie), charlie);
+	reportLE(addtail, list.AddTail((OBJECT*)delta),   delta);
+	reportLE(addtail, list.AddTail((OBJECT*)echo),    echo);
+	reportLE(addtail, list.AddTail((OBJECT*)foxtrot), foxtrot);
+	
+	std::cout << "list should have 6 elements:\n";
+	
+	reportNT(getcount, list.getCount(), 6);
+	reportLE(gethead, list.getHead(), charlie);
+	reportLE(gettail, list.getTail(), foxtrot);
+	
+	std::cout << "remove all items:\n";
+	
+	report(removehead, list.RemoveHead(), charlie);
+	report(removehead, list.RemoveHead(), bravo);
+	report(removehead, list.RemoveHead(), alpha);
+	report(removehead, list.RemoveHead(), delta);
+	report(removehead, list.RemoveHead(), echo);
+	report(removehead, list.RemoveHead(), foxtrot);
+	
+	std::cout << "list should be empty (again):\n";
+	
+	reportNT(getcount, list.getCount(), 0);
+	report(removehead, list.RemoveHead(), NULL);
+	reportLE(gethead, list.getHead(), NULL);
+	reportLE(gettail, list.getTail(), NULL);
+	
+	std::cout << "\n";
+	std::cout << "\n";
+	
 	std::cout << "Testing Queue:\n\n";
 	
 	static const char enqueue[] = "Enqueue()";
@@ -124,7 +175,7 @@ int main(int argc, const char * argv[])
 	reportLE(enqueue, queue.Enqueue((OBJECT*)delta),   delta);
 	reportLE(enqueue, queue.Enqueue((OBJECT*)echo),    echo);
 	reportLE(enqueue, queue.Enqueue((OBJECT*)foxtrot), foxtrot);
-
+	
 	std::cout << "queue should have 6 elements:\n";
 	
 	reportNT(getcount, queue.getCount(), 6);
@@ -146,7 +197,7 @@ int main(int argc, const char * argv[])
 	report(dequeue, queue.Dequeue(), NULL);
 	reportLE(getfront, queue.getFront(), NULL);
 	reportLE(getback, queue.getBack(), NULL);
-
+	
 	std::cout << "\n";
 	std::cout << "\n";
 	
