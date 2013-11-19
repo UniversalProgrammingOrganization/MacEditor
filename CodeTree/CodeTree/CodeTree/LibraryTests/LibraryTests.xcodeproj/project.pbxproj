@@ -30,6 +30,7 @@
 		6551025F18349CEC0058AB6C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6551026118349CEC0058AB6C /* LibraryTests.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = LibraryTests.1; sourceTree = "<group>"; };
 		6551026E18349EE20058AB6C /* libLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLibrary.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/CodeTree-fbuaibkjkmchpkgybnyolkvrfanu/Build/Products/Debug/libLibrary.a"; sourceTree = "<group>"; };
+		65510278183B275C0058AB6C /* results.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = results.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +67,7 @@
 			children = (
 				6551025F18349CEC0058AB6C /* main.cpp */,
 				6551026118349CEC0058AB6C /* LibraryTests.1 */,
+				65510278183B275C0058AB6C /* results.txt */,
 			);
 			path = LibraryTests;
 			sourceTree = "<group>";
