@@ -29,31 +29,48 @@ int g_passd = 0;
 
 #define LE_STRING (const char*)pLE->m_pObject
 
+// reports on an OBJECT test:
 void report(
 	const char* fnm,
-	const char* got,
+	OBJECT* got,
 	const char* exp)
 {
 	g_tests++;
 
+	const char* cGot = (const char*)got;
+	const char* cExp = (const char*)exp;
+	
 	if (got == exp)
 	{
 		g_passd++;
 
-		std::cout << "PASS: "<< (fnm ? fnm : "NULL") << "() == " << (exp ? exp : "NULL") << ")\n";
+		std::cout << "PASS: "<< (fnm ? fnm : "NULL") << " == " << (cExp ? cExp : "NULL") << "\n";
 	}
 	else
 	{
-		std::cout << "FAIL: "<< (fnm ? fnm : "NULL") << "() == " << (got ? got : "NULL") << ")\n";
+		std::cout << "FAIL: "<< (fnm ? fnm : "NULL") << " == " << (cGot ? cGot : "NULL") << "\n";
 	}
 }
 
+// reports on a list element test:
+void reportLE(
+  const char* fnm,
+  ListElement* pLE,
+	const char* exp)
+{
+	if (exp)
+	{
+		report(fnm, pLE->m_pObject, exp);
+	}
+	else
+	{
+		report(fnm, NULL, exp);
+	}
+}
+
+
 int main(int argc, const char * argv[])
 {
-	std::cout << "Testing Queue:\n\n";
-	
-	Queue queue;
-	
 	static const char alpha[]   = "ALPHA";
 	static const char bravo[]   = "BRAVO";
 	static const char charlie[] = "CHARLIE";
@@ -61,39 +78,49 @@ int main(int argc, const char * argv[])
 	static const char echo[]    = "ECHO";
 	static const char foxtrot[] = "FOXTROT";
 
-	static const char enqueue[] = "Enqueue";
-
-	ListElement* pLE = queue.Enqueue((OBJECT*)alpha);
-	report(enqueue, LE_STRING, alpha);
-
-	pLE = queue.Enqueue((OBJECT*)bravo);
-	report(enqueue, LE_STRING, bravo);
-
-	pLE = queue.Enqueue((OBJECT*)charlie);
-	report(enqueue, LE_STRING, charlie);
-
-	pLE = queue.Enqueue((OBJECT*)delta);
-	report(enqueue, LE_STRING, delta);
-
-	pLE = queue.Enqueue((OBJECT*)echo);
-	report(enqueue, LE_STRING, echo);
-
-	pLE = queue.Enqueue((OBJECT*)foxtrot);
-	report(enqueue, LE_STRING, foxtrot);
-
-	std::cout << "\n";
+	std::cout << "Testing Queue:\n\n";
 	
-	std::cout << "Queue front: "<< (const char*)queue.getFront()->m_pObject << "\n";
-	std::cout << "Queue back: "<< (const char*)queue.getBack()->m_pObject << "\n";
-
-	std::cout << "\n";
+	static const char enqueue[] = "Enqueue()";
+	static const char dequeue[] = "Dequeue()";
+	static const char getfront[] = "getFront()";
+	static const char getback[] = "getBack()";
 	
-	std::cout << "Dequeue: "<< (const char*)queue.Dequeue() << "\n";
-	std::cout << "Dequeue: "<< (const char*)queue.Dequeue() << "\n";
-	std::cout << "Dequeue: "<< (const char*)queue.Dequeue() << "\n";
-	std::cout << "Dequeue: "<< (const char*)queue.Dequeue() << "\n";
-	std::cout << "Dequeue: "<< (const char*)queue.Dequeue() << "\n";
-	std::cout << "Dequeue: "<< (const char*)queue.Dequeue() << "\n";
+	Queue queue;
+	
+	std::cout << "queue should be empty:\n";
+	
+	report(dequeue, queue.Dequeue(), NULL);
+	reportLE(getfront, queue.getFront(), NULL);
+	reportLE(getback, queue.getBack(), NULL);
+	
+	std::cout << "enqueue some items:\n";
+	
+	reportLE(enqueue, queue.Enqueue((OBJECT*)alpha),   alpha);
+	reportLE(enqueue, queue.Enqueue((OBJECT*)bravo),   bravo);
+	reportLE(enqueue, queue.Enqueue((OBJECT*)charlie), charlie);
+	reportLE(enqueue, queue.Enqueue((OBJECT*)delta),   delta);
+	reportLE(enqueue, queue.Enqueue((OBJECT*)echo),    echo);
+	reportLE(enqueue, queue.Enqueue((OBJECT*)foxtrot), foxtrot);
+
+	std::cout << "queue should have content:\n";
+	
+	reportLE(getfront, queue.getFront(), alpha);
+	reportLE(getback, queue.getBack(), foxtrot);
+	
+	std::cout << "dequeue all items:\n";
+	
+	report(dequeue, queue.Dequeue(), alpha);
+	report(dequeue, queue.Dequeue(), bravo);
+	report(dequeue, queue.Dequeue(), charlie);
+	report(dequeue, queue.Dequeue(), delta);
+	report(dequeue, queue.Dequeue(), echo);
+	report(dequeue, queue.Dequeue(), foxtrot);
+	
+	std::cout << "stack should be empty (again):\n";
+	
+	report(dequeue, queue.Dequeue(), NULL);
+	reportLE(getfront, queue.getFront(), NULL);
+	reportLE(getback, queue.getBack(), NULL);
 
 	std::cout << "\n";
 	std::cout << "\n";
@@ -102,38 +129,52 @@ int main(int argc, const char * argv[])
 	
 	Stack stack;
 	
-	std::cout << "Push("<< (const char*)alpha << ")\n";
-	stack.Push((OBJECT*)alpha);
-	std::cout << "Push("<< (const char*)bravo << ")\n";
-	stack.Push((OBJECT*)bravo);
-	std::cout << "Push("<< (const char*)charlie << ")\n";
-	stack.Push((OBJECT*)charlie);
-	std::cout << "Push("<< (const char*)delta << ")\n";
-	stack.Push((OBJECT*)delta);
-	std::cout << "Push("<< (const char*)echo << ")\n";
-	stack.Push((OBJECT*)echo);
-	std::cout << "Push("<< (const char*)foxtrot << ")\n";
-	stack.Push((OBJECT*)foxtrot);
+	static const char f_push[] = "Push()";
+	static const char f_pop[] = "Pop()";
+	static const char gettop[] = "getTop()";
+	static const char getbottom[] = "getBottom()";
 	
-	std::cout << "\n";
+	std::cout << "stack should be empty:\n";
 	
-	std::cout << "Stack top: "<< (const char*)stack.getTop()->m_pObject << "\n";
-	std::cout << "Stack bottom: "<< (const char*)stack.getBottom()->m_pObject << "\n";
+	report(f_pop, stack.Pop(), NULL);
+	reportLE(gettop, stack.getTop(), NULL);
+	reportLE(getbottom, stack.getBottom(), NULL);
 	
-	std::cout << "\n";
+	std::cout << "push some items:\n";
 	
-	std::cout << "Pop: "<< (const char*)stack.Pop() << "\n";
-	std::cout << "Pop: "<< (const char*)stack.Pop() << "\n";
-	std::cout << "Pop: "<< (const char*)stack.Pop() << "\n";
-	std::cout << "Pop: "<< (const char*)stack.Pop() << "\n";
-	std::cout << "Pop: "<< (const char*)stack.Pop() << "\n";
-	std::cout << "Pop: "<< (const char*)stack.Pop() << "\n";
+	reportLE(f_push, stack.Push((OBJECT*)alpha),   alpha);
+	reportLE(f_push, stack.Push((OBJECT*)bravo),   bravo);
+	reportLE(f_push, stack.Push((OBJECT*)charlie), charlie);
+	reportLE(f_push, stack.Push((OBJECT*)delta),   delta);
+	reportLE(f_push, stack.Push((OBJECT*)echo),    echo);
+	reportLE(f_push, stack.Push((OBJECT*)foxtrot), foxtrot);
 	
-	std::cout << "\n";
+	std::cout << "stack should have content:\n";
 	
-	std::cout << "Tests:  "<< g_tests << "\n";
-	std::cout << "Passed: "<< g_passd << "\n";
+	reportLE(gettop, stack.getTop(), foxtrot);
+	reportLE(getbottom, stack.getBottom(), alpha);
 
+	std::cout << "dequeue all items:\n";
+	
+	report(f_pop, stack.Pop(), foxtrot);
+	report(f_pop, stack.Pop(), echo);
+	report(f_pop, stack.Pop(), delta);
+	report(f_pop, stack.Pop(), charlie);
+	report(f_pop, stack.Pop(), bravo);
+	report(f_pop, stack.Pop(), alpha);
+	
+	std::cout << "stack should be empty (again):\n";
+	
+	report(f_pop, stack.Pop(), NULL);
+	reportLE(gettop, stack.getTop(), NULL);
+	reportLE(getbottom, stack.getBottom(), NULL);
+	
+	std::cout << "\n";
+	std::cout << "\n";
+
+	std::cout << "Tests:  "<< g_tests << "\n";
+	std::cout << "Passed: "<< g_passd << "\n\n";
+	
 	return 0;
 }
 
