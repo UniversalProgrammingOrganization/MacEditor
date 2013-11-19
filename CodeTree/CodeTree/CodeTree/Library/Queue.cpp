@@ -18,6 +18,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "Queue.h"
 
+uint32_t Queue::getCount()
+{
+	return m_List.getCount();
+}
+
 ListElement* Queue::getFront()
 {
 	return m_List.getHead();

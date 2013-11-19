@@ -19,6 +19,11 @@
 #include "List.h"
 #include "Stack.h"
 
+uint32_t Stack::getCount()
+{
+	return m_List.getCount();
+}
+
 ListElement* Stack::getTop()
 {
 	return m_List.getHead();

@@ -30,6 +30,8 @@ class Stack // represents a Stack
 		List m_List;
 
 	public:
+		uint32_t getCount(); // get count of elements
+		
 		ListElement* getTop(); // get pointer to the Top element
 
 		ListElement* getBottom();  // get pointer to the Bottom element

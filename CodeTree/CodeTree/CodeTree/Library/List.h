@@ -36,12 +36,15 @@ class ListElement // represents a List Element
 class List // represents a List
 {
 	private:
+		uint32_t m_nCount;
 		ListElement* m_pHead; // pointer to the Head element
 		ListElement* m_pTail; // pointer to the Tail element
 
 	public:
-		ListElement* getHead(); // get pointer to the Head element
+		uint32_t getCount(); // get count of elements
 		
+		ListElement* getHead(); // get pointer to the Head element
+	
 		ListElement* getTail();  // get pointer to the Tail element
 
 		List(); // List constructor

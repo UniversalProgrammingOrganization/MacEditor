@@ -24,6 +24,11 @@ ListElement::ListElement(OBJECT* pObject) // Element constructor
 	m_pNext = NULL;
 }
 
+uint32_t List::getCount()
+{
+	return m_nCount;
+}
+
 ListElement* List::getHead()
 {
 	return m_pHead;
@@ -36,6 +41,7 @@ ListElement* List::getTail()
 
 List::List() // List constructor
 {
+	m_nCount = 0;
 	m_pHead = NULL;
 	m_pTail = NULL;
 }
@@ -70,6 +76,8 @@ ListElement* List::AddHead(OBJECT* pObject) // AddHead function
 		{
 			m_pTail = m_pHead; // set the Tail element equal to the Head element
 		}
+	
+		m_nCount++;
 	}
 	
 	return pElement; // return the new element pointer
@@ -97,6 +105,8 @@ ListElement* List::AddTail(OBJECT* pObject) // AddTail function
 		{
 			m_pHead = m_pTail; // set the Head element equal to the Tail element
 		}
+	
+		m_nCount++;
 	}
 	
 	return pElement; // return the new element pointer
@@ -116,6 +126,8 @@ OBJECT* List::RemoveHead() // RemoveHead function
 		}
 		
 		OBJECT* pObject = pElement->m_pObject; // get the object pointer from the element
+		
+		m_nCount--;
 		
 		delete pElement; // delete the element
 		

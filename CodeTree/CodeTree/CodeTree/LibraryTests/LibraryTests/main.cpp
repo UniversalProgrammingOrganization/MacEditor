@@ -29,6 +29,26 @@ int g_passd = 0;
 
 #define LE_STRING (const char*)pLE->m_pObject
 
+// reports on a numeric test:
+void reportNT(
+	const char* fnm,
+	uint32_t got,
+	uint32_t exp)
+{
+	g_tests++;
+	
+	if (got == exp)
+	{
+		g_passd++;
+		
+		std::cout << "PASS: "<< (fnm ? fnm : "NULL") << " == " << exp << "\n";
+	}
+	else
+	{
+		std::cout << "FAIL: "<< (fnm ? fnm : "NULL") << " == " << got << "\n";
+	}
+}
+
 // reports on an OBJECT test:
 void report(
 	const char* fnm,
@@ -36,14 +56,14 @@ void report(
 	const char* exp)
 {
 	g_tests++;
-
+	
 	const char* cGot = (const char*)got;
 	const char* cExp = (const char*)exp;
 	
 	if (got == exp)
 	{
 		g_passd++;
-
+		
 		std::cout << "PASS: "<< (fnm ? fnm : "NULL") << " == " << (cExp ? cExp : "NULL") << "\n";
 	}
 	else
@@ -77,6 +97,8 @@ int main(int argc, const char * argv[])
 	static const char delta[]   = "DELTA";
 	static const char echo[]    = "ECHO";
 	static const char foxtrot[] = "FOXTROT";
+	
+	static const char getcount[] = "getCount()";
 
 	std::cout << "Testing Queue:\n\n";
 	
@@ -89,6 +111,7 @@ int main(int argc, const char * argv[])
 	
 	std::cout << "queue should be empty:\n";
 	
+	reportNT(getcount, queue.getCount(), 0);
 	report(dequeue, queue.Dequeue(), NULL);
 	reportLE(getfront, queue.getFront(), NULL);
 	reportLE(getback, queue.getBack(), NULL);
@@ -102,8 +125,9 @@ int main(int argc, const char * argv[])
 	reportLE(enqueue, queue.Enqueue((OBJECT*)echo),    echo);
 	reportLE(enqueue, queue.Enqueue((OBJECT*)foxtrot), foxtrot);
 
-	std::cout << "queue should have content:\n";
+	std::cout << "queue should have 6 elements:\n";
 	
+	reportNT(getcount, queue.getCount(), 6);
 	reportLE(getfront, queue.getFront(), alpha);
 	reportLE(getback, queue.getBack(), foxtrot);
 	
@@ -116,8 +140,9 @@ int main(int argc, const char * argv[])
 	report(dequeue, queue.Dequeue(), echo);
 	report(dequeue, queue.Dequeue(), foxtrot);
 	
-	std::cout << "stack should be empty (again):\n";
+	std::cout << "queue should be empty (again):\n";
 	
+	reportNT(getcount, queue.getCount(), 0);
 	report(dequeue, queue.Dequeue(), NULL);
 	reportLE(getfront, queue.getFront(), NULL);
 	reportLE(getback, queue.getBack(), NULL);
@@ -136,6 +161,7 @@ int main(int argc, const char * argv[])
 	
 	std::cout << "stack should be empty:\n";
 	
+	reportNT(getcount, stack.getCount(), 0);
 	report(f_pop, stack.Pop(), NULL);
 	reportLE(gettop, stack.getTop(), NULL);
 	reportLE(getbottom, stack.getBottom(), NULL);
@@ -149,8 +175,9 @@ int main(int argc, const char * argv[])
 	reportLE(f_push, stack.Push((OBJECT*)echo),    echo);
 	reportLE(f_push, stack.Push((OBJECT*)foxtrot), foxtrot);
 	
-	std::cout << "stack should have content:\n";
+	std::cout << "stack should have 6 elements:\n";
 	
+	reportNT(getcount, stack.getCount(), 6);
 	reportLE(gettop, stack.getTop(), foxtrot);
 	reportLE(getbottom, stack.getBottom(), alpha);
 
@@ -165,6 +192,7 @@ int main(int argc, const char * argv[])
 	
 	std::cout << "stack should be empty (again):\n";
 	
+	reportNT(getcount, stack.getCount(), 0);
 	report(f_pop, stack.Pop(), NULL);
 	reportLE(gettop, stack.getTop(), NULL);
 	reportLE(getbottom, stack.getBottom(), NULL);

@@ -30,6 +30,8 @@ class Queue // represents a Queue
 		List m_List;
 
 	public:
+		uint32_t getCount(); // get count of elements
+
 		ListElement* getFront(); // get pointer to the Front element
 
 		ListElement* getBack();  // get pointer to the Back element
