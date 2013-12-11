@@ -27,7 +27,7 @@ TreeBranch::~TreeBranch()
 {
 	while (getBranchCount())
 	{
-		TreeBranch* pBranch = (TreeBranch*)m_Branches.RemoveHead();
+		TreeBranch* pBranch = (TreeBranch*)RemoveBranch();
 		
 		if (pBranch)
 		{
