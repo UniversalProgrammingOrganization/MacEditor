@@ -76,7 +76,10 @@ Tree::Tree(OBJECT* pObject)
 
 Tree::~Tree()
 {
-	m_pTrunk->~TreeBranch();
+	if (m_pTrunk)
+	{
+		delete m_pTrunk;
+	}
 }
 
 
