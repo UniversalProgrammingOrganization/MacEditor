@@ -24,6 +24,11 @@ ListElement::ListElement(OBJECT* pObject) // Element constructor
 	m_pNext = NULL;
 }
 
+ListElement* ListElement::getNext()
+{
+	return m_pNext;
+}
+
 uint32_t List::getCount()
 {
 	return m_nCount;

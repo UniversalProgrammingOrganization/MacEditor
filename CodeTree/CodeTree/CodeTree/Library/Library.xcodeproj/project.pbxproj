@@ -14,6 +14,8 @@
 		6551023618349B2B0058AB6C /* Queue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6551023118349B2B0058AB6C /* Queue.h */; };
 		655102761834A3CA0058AB6C /* Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 655102741834A3CA0058AB6C /* Stack.cpp */; };
 		655102771834A3CA0058AB6C /* Stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 655102751834A3CA0058AB6C /* Stack.h */; };
+		6551027F184DA0070058AB6C /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6551027D184DA0070058AB6C /* Tree.cpp */; };
+		65510280184DA0070058AB6C /* Tree.h in Headers */ = {isa = PBXBuildFile; fileRef = 6551027E184DA0070058AB6C /* Tree.h */; };
 		65F4BC081835A257006080B4 /* List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65F4BC061835A257006080B4 /* List.cpp */; };
 		65F4BC091835A257006080B4 /* List.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F4BC071835A257006080B4 /* List.h */; };
 /* End PBXBuildFile section */
@@ -27,6 +29,8 @@
 		6551023118349B2B0058AB6C /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Queue.h; path = CodeTree/Library/Queue.h; sourceTree = "<group>"; };
 		655102741834A3CA0058AB6C /* Stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Stack.cpp; path = CodeTree/Library/Stack.cpp; sourceTree = "<group>"; };
 		655102751834A3CA0058AB6C /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = CodeTree/Library/Stack.h; sourceTree = "<group>"; };
+		6551027D184DA0070058AB6C /* Tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tree.cpp; path = CodeTree/Library/Tree.cpp; sourceTree = "<group>"; };
+		6551027E184DA0070058AB6C /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tree.h; path = CodeTree/Library/Tree.h; sourceTree = "<group>"; };
 		65F4BC061835A257006080B4 /* List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = List.cpp; path = CodeTree/Library/List.cpp; sourceTree = "<group>"; };
 		65F4BC071835A257006080B4 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = List.h; path = CodeTree/Library/List.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +74,8 @@
 				655102741834A3CA0058AB6C /* Stack.cpp */,
 				6551022E18349B2B0058AB6C /* CircularQueue.h */,
 				6551022D18349B2B0058AB6C /* CircularQueue.cpp */,
+				6551027E184DA0070058AB6C /* Tree.h */,
+				6551027D184DA0070058AB6C /* Tree.cpp */,
 			);
 			name = Source;
 			path = ../..;
@@ -84,6 +90,7 @@
 			files = (
 				65F4BC091835A257006080B4 /* List.h in Headers */,
 				6551023618349B2B0058AB6C /* Queue.h in Headers */,
+				65510280184DA0070058AB6C /* Tree.h in Headers */,
 				6551023418349B2B0058AB6C /* library.h in Headers */,
 				6551023318349B2B0058AB6C /* CircularQueue.h in Headers */,
 				655102771834A3CA0058AB6C /* Stack.h in Headers */,
@@ -145,6 +152,7 @@
 				65F4BC081835A257006080B4 /* List.cpp in Sources */,
 				6551023518349B2B0058AB6C /* Queue.cpp in Sources */,
 				655102761834A3CA0058AB6C /* Stack.cpp in Sources */,
+				6551027F184DA0070058AB6C /* Tree.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

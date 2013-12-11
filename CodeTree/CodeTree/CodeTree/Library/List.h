@@ -16,8 +16,15 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// A simple list class.
-// Uses in this program: parsing, editing, core of Stack and Queue classes.
+/*
+ This single-linked list class is appropriate for use as the core structure of
+ stack, queue, and tree classes, as long as list modifications occur
+ only at the ends of the list (head or tail).
+ 
+ A double-linked variant of this class is forthcoming, where the internal 
+ list elements can be added/removed by updating the 'next' and 'prev' pointers
+ of adjacent elements.
+ */
 
 #ifndef __CodeTree__List__
 #define __CodeTree__List__
@@ -26,11 +33,17 @@
 
 class ListElement // represents a List Element
 {
+	friend class List;
+	
+	private:
+		ListElement* m_pNext; // pointer to the Next element
+
 	public:
 		OBJECT* m_pObject; // pointer to an Object
-		ListElement* m_pNext; // pointer to the Next element
 		
 		ListElement(OBJECT* pObject); // Element constructor
+		
+		ListElement* getNext(); // get pointer to next element
 };
 
 class List // represents a List
@@ -46,7 +59,7 @@ class List // represents a List
 		ListElement* getHead(); // get pointer to the Head element
 	
 		ListElement* getTail();  // get pointer to the Tail element
-
+		
 		List(); // List constructor
 		
 		~List(); // List destructor
