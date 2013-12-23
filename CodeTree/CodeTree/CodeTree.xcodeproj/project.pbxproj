@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6551023718349BB80058AB6C /* libLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6551022618349A550058AB6C /* libLibrary.a */; };
 		65A67E5D17ED6605002E9C44 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A67E5C17ED6605002E9C44 /* Cocoa.framework */; };
 		65A67E6717ED6605002E9C44 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65A67E6517ED6605002E9C44 /* InfoPlist.strings */; };
 		65A67E6A17ED6605002E9C44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A67E6917ED6605002E9C44 /* main.m */; };
@@ -18,26 +17,7 @@
 		65A67E8D17ED718F002E9C44 /* TheView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A67E8C17ED718E002E9C44 /* TheView.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6551022518349A550058AB6C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6551022118349A540058AB6C /* Library.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6551021A18349A540058AB6C;
-			remoteInfo = Library;
-		};
-		6551026C18349CED0058AB6C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6551026818349CEC0058AB6C /* LibraryTests.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6551025C18349CEC0058AB6C;
-			remoteInfo = LibraryTests;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		6551022118349A540058AB6C /* Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Library.xcodeproj; path = CodeTree/Library/Library.xcodeproj; sourceTree = "<group>"; };
-		6551026818349CEC0058AB6C /* LibraryTests.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LibraryTests.xcodeproj; path = CodeTree/LibraryTests/LibraryTests.xcodeproj; sourceTree = "<group>"; };
 		65A67E5817ED6605002E9C44 /* CodeTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A67E5C17ED6605002E9C44 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		65A67E5F17ED6605002E9C44 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -61,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6551023718349BB80058AB6C /* libLibrary.a in Frameworks */,
 				65A67E5D17ED6605002E9C44 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,27 +48,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6551022218349A540058AB6C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6551022618349A550058AB6C /* libLibrary.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		6551026918349CEC0058AB6C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6551026D18349CED0058AB6C /* LibraryTests */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		65A67E4D17ED6605002E9C44 = {
 			isa = PBXGroup;
 			children = (
-				6551026818349CEC0058AB6C /* LibraryTests.xcodeproj */,
-				6551022118349A540058AB6C /* Library.xcodeproj */,
 				65A67E6217ED6605002E9C44 /* CodeTree */,
 				65A67E5B17ED6605002E9C44 /* Frameworks */,
 				65A67E5917ED6605002E9C44 /* Products */,
@@ -187,39 +148,12 @@
 			mainGroup = 65A67E4D17ED6605002E9C44;
 			productRefGroup = 65A67E5917ED6605002E9C44 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 6551022218349A540058AB6C /* Products */;
-					ProjectRef = 6551022118349A540058AB6C /* Library.xcodeproj */;
-				},
-				{
-					ProductGroup = 6551026918349CEC0058AB6C /* Products */;
-					ProjectRef = 6551026818349CEC0058AB6C /* LibraryTests.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				65A67E5717ED6605002E9C44 /* CodeTree */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		6551022618349A550058AB6C /* libLibrary.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libLibrary.a;
-			remoteRef = 6551022518349A550058AB6C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6551026D18349CED0058AB6C /* LibraryTests */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = LibraryTests;
-			remoteRef = 6551026C18349CED0058AB6C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		65A67E5617ED6605002E9C44 /* Resources */ = {
